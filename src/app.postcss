@@ -1,0 +1,36 @@
+/* Write your global styles here, in PostCSS syntax */
+@layer normalize, base, utilities;
+
+@import 'open-props/normalize' layer(normalize);
+
+@layer base {
+	/* Base styles will go here */
+}
+
+@layer utilities {
+	/**
+	* Utility class to hide an element visually, but still make it available to screen readers.
+	*/
+	.visibly-hidden {
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
+	/**
+	* Utility class for a wrapper element which will center its children horizontally.
+	* @param --max-width: 55rem
+	*/
+	.center-content-block {
+		--max-width: 55rem;
+
+		display: grid;
+		grid-template-columns: min(100%, var(--max-width));
+		padding-inline: max(1rem, 3vw);
+		justify-content: center;
+		gap: 1rem;
+	}
+}

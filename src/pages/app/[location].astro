@@ -1,0 +1,13 @@
+---
+import Router from "@/router/+router";
+import Page from "../../lib/components/layout/Page.astro";
+
+// TODO: make this a protected route, after adding auth
+---
+
+<Page title="Astro">
+	<main>
+		<h1>My App</h1>
+		<Router client:load base="/app" ssrRoute={Astro.url.pathname} />
+	</main>
+</Page>
